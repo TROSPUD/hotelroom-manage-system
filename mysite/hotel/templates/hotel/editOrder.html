@@ -1,0 +1,64 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改订单界面</title>
+    <style>.account {
+        width: 500px;
+        height: 600px;
+        border: 2px solid #dddddd;
+        border-radius: 5px;
+        box-shadow: 5px 5px 20px #aaa;
+
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        padding: 20px 40px;
+    }
+
+    .account h2 {
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    </style>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1-dist/css/bootstrap.css'%}">
+</head>
+<body>
+<div class="account">
+    <h2>订单状态修改</h2>
+    <form method="post" action="/editOrder/">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">订单编号</label>
+            <input type="text" value="{{order.id}}" class="form-control" name="id" id="exampleInputEmail1" readonly="true">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">状态</label>
+            <input type="text" value="{{order.state}}" class="form-control" name="state" id="exampleInputEmail1">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">房号</label>
+            <input type="tsxt" value="{{order.room_id}}" class="form-control" name="room_id" id="exampleInputPassword1" readonly="true">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">顾客编号</label>
+            <input type="text" value="{{order.cust_id}}" class="form-control" name="cust_id" id="exampleInputPassword1" readonly="true">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">入住时间</label>
+            <input type="text" value="{{order.start_time}}" class="form-control" name="start_time" id="exampleInputPassword1" readonly="true">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">退房时间</label>
+            <input type="text" value="{{order.end_time}}" class="form-control" name="end_time" id="exampleInputPassword1">
+        </div>
+        <div style="margin-left:180px;display: inline-block">
+            <button style="margin-top: 25px" type="submit" onclick="myfunc()" class="btn btn-primary">确认</button>
+        </div>
+        
+    </form>
+</div>
+
+</body>
+</html>

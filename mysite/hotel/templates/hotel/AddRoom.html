@@ -1,0 +1,55 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增房间界面</title>
+    <style>.account {
+        width: 500px;
+        height: 470px;
+        border: 2px solid #dddddd;
+        border-radius: 5px;
+        box-shadow: 5px 5px 20px #aaa;
+
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        padding: 20px 40px;
+    }
+
+    .account h2 {
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    </style>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1-dist/css/bootstrap.css'%}">
+</head>
+<body>
+<div class="account">
+    <h2>添加房间</h2>
+    <form method="post" action="/AddRoom/">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">房号</label>
+            <input type="text" class="form-control" name="room_number" id="exampleInputEmail1" placeholder="请输入房号">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">类型</label>
+            <input type="text" class="form-control" name="type" id="exampleInputPassword1" placeholder="请输入房间类型">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">价格</label>
+            <input type="text" class="form-control" name="price" id="exampleInputPassword1" placeholder="请输入价格">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">状态</label>
+            <input type="text" class="form-control" name="state" id="exampleInputPassword1" placeholder="请输入房间状态">
+        </div>
+        <div style="margin-left:180px;display: inline-block">
+            <button style="margin-top: 25px" type="submit" onclick="myfunc()" class="btn btn-primary">确认</button>
+        </div>
+        
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,200 @@
+{% load static %}
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'plugins/css/styles.css'%}">
+  <!--bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+  <!--for icons-->
+  <script src="https://kit.fontawesome.com/d052c45ff6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/css/iconfont.css' %}">
+    <style>
+        .navbar{
+            border-radius: 0;
+
+        }
+        #contain {
+            display: inline-block;
+            padding: 1% 0%;
+
+        }
+        .content {
+            display: inline-block;
+            position: absolute;
+        }
+        .staffli {
+            display: inline-block;
+            position: relative;
+            top: 50px;
+            left: 20%;
+
+        }
+        #nar {
+            padding-bottom: 0;
+        }
+        .navbar {
+            margin-bottom: 0;
+        }
+        .msg {
+            position: relative;
+            top: 100px;
+        }
+        .edit {
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+        }
+        .from {
+            display: inline-block;
+        }
+
+    </style>
+</head>
+
+
+
+
+
+<body>
+    <section id="title">
+        <div class="container-fluid" id="contain">
+    
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark" id="nar">
+          <a class="navbar-brand" id="brand" href=""><i class="fa-solid fa-fire"></i>HotelManagemrnt</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" herf="">Login as receptionist</a>
+                </li>
+            </ul>
+            </div>
+          </div>
+      </nav>
+        </div>
+      </section>
+      <div class="content">
+        <div class="menu-box">
+            <!-- 展示与隐藏侧边栏 开始-->
+            <input type="checkbox" id="menu-btn">
+            <label for="menu-btn"><i class="iconfont icon-yemianfanhui"></i></label>
+            <!-- 展示与隐藏侧边栏 结束-->
+            <div class="menu">
+                <!-- 侧边栏的标题 开始-->
+                <div class="menu-title">
+                    <h1>Menu</h1>
+                </div>
+                <!-- 侧边栏的标题 结束-->
+
+                <!-- 每一项导航 -->
+                <div class="menu-item">
+                    <input type="checkbox" id="menu-item1">
+                    <label for="menu-item1">
+                        <i class="menu-item-icon iconfont icon-a-01-shujuzhongxin"></i>
+                        <a href="/SclientManage/" style="color: black"><span>client management</span></a>
+                    </label>
+                </div>
+
+                <div class="menu-item">
+                    <input type="checkbox" id="menu-item2">
+                    <label for="menu-item2">
+                        <i class="menu-item-icon iconfont icon-a-02-kechengguanli"></i>
+                        <a href="/SOrderManage/" style="color: black"><span>order management</span></a>
+
+                    </label>
+                </div>
+
+                <div class="menu-item">
+                    <input type="checkbox" id="menu-item3">
+                    <label for="menu-item3">
+                        <i class="menu-item-icon iconfont icon-a-04-zixunfabu"></i>
+                        <a href="/SRoomManage/" style="color: black"><span>room management</span></a>
+                    </label>
+                </div>
+
+                <div class="set-line"></div>
+
+                <div class="menu-item">
+                    <label>
+                        <i class="menu-item-icon iconfont icon-a-08-shezhi"></i>
+                        <a href="http://127.0.0.1:8000/" style="color: black"><span>log out</span></a>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "staffli">
+        <div class="container">
+            <div style="margin-bottom: 10px">
+                <a class="btn btn-success" href="/AddOrder/?source=1">
+                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                    新增订单
+                </a>
+            </div>
+    
+    <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">
+              <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+              订单列表
+          </div>
+    
+          <!-- Table -->
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>状态</th>
+                <th>房号</th>
+                <th>顾客编号</th>
+                <th>前台编号</th>
+                <th>入住时间</th>
+                <th>退房时间</th>
+                <th>操作</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                {% for t in ls %}
+                    <tr>
+                    <th>{{t.id}}</th>
+                        <td>{{t.state}}</td>
+                        <td>{{t.room_id}}</td>
+                        <td>{{t.cust_id}}</td>
+                        <td>{{t.staff_id}}</td>
+                        <td>{{t.start_time}}</td>
+                        <td>{{t.end_time}}</td>
+                        <td>
+                            <form class="from" method="post" action="/SdeleteOrder/?id={{t.id}}">
+                                {% csrf_token %}
+                                <button class="btn btn-danger btn-xs" type="submit">删除</button>
+                            </form>
+                      </td>
+                    </tr>
+                {% endfor %}
+                
+            </tbody>
+          </table>
+        </div>
+    
+        </div>
+    </div>
+    {% if msg %}
+        <h2 class="msg"><center>{{msg}}</center></h2>
+    {% endif %}
+
+
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap-3.4.1-dist/js/bootstrap.js'%}"></script>
+</body>
+</html>

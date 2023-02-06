@@ -1,0 +1,70 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录注册界面</title>
+    <style>.account {
+        width: 500px;
+        height: 700px;
+        border: 2px solid #dddddd;
+        border-radius: 5px;
+        box-shadow: 5px 5px 20px #aaa;
+
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        padding: 20px 40px;
+    }
+
+    .account h2 {
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    </style>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1-dist/css/bootstrap.css'%}">
+</head>
+<body>
+<div class="account">
+    <h2>用户注册</h2>
+    <form method="post" action="/StaffRegister/">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">用户名</label>
+            <input type="text" class="form-control" name="user" id="exampleInputEmail1" placeholder="请输入用户名">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">密码</label>
+            <input type="password" class="form-control" name="pwd" id="exampleInputPassword1" placeholder="请输入密码">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">编号</label>
+            <input type="text" class="form-control" name="id" id="exampleInputPassword1" placeholder="请输入编号">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">姓名</label>
+            <input type="text" class="form-control" name="name" id="exampleInputPassword1" placeholder="请输入姓名">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">职位</label>
+            <input type="text" class="form-control" name="type" id="exampleInputPassword1" placeholder="请输入职位">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">手机号</label>
+            <input type="text" class="form-control" name="phone" id="exampleInputPassword1" placeholder="请输入手机号">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">性别</label>
+            <input type="text" class="form-control" name="sex" id="exampleInputPassword1" placeholder="请输入性别">
+        </div>
+        <div style="margin-left:180px;display: inline-block">
+            <button style="margin-top: 25px" type="submit" onclick="myfunc()" class="btn btn-primary">确认</button>
+        </div>
+        
+    </form>
+</div>
+<script type="text/javascript"> function myfunc() {
+    alert("注册成功！~")
+} </script>
+</body>
+</html>
