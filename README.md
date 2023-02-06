@@ -207,11 +207,11 @@ HotelManagement主页面,点击按钮可以进行管理员和员工的登录操�
 
 管理员、酒店前台员工和酒店清洁员工这三种用户的功能需求各不相同，其用户组织架构图如图
 
-![用户组织架构.png](hotelroom-manage-system%20c89885c34d1d497c9384b47dd8063902/%25E7%2594%25A8%25E6%2588%25B7%25E7%25BB%2584%25E7%25BB%2587%25E6%259E%25B6%25E6%259E%2584.png)
+![用户组织架构.png](imgs/用户组织架构.png)
 
 ### 1.2 系统用例图
 
-![系统用例.png](hotelroom-manage-system%20c89885c34d1d497c9384b47dd8063902/%25E7%25B3%25BB%25E7%25BB%259F%25E7%2594%25A8%25E4%25BE%258B.png)
+![系统用例.png](imgs/系统用例.png)
 
 ### 1.3 系统核心用例
 
@@ -325,7 +325,7 @@ HotelManagement主页面,点击按钮可以进行管理员和员工的登录操�
 一个清洁员工可以清洁0或多个房间，所以清洁员工对房间的关系数量是1：0..n。
 据此，可以画出系统的领域模型
 
-![DomainModel.png](hotelroom-manage-system%20c89885c34d1d497c9384b47dd8063902/DomainModel.png)
+![DomainModel.png](imgs/DomainModel.png)
 
 ### 二、 架构设计
 
